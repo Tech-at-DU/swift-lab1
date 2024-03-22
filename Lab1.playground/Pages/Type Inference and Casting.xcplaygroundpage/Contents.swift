@@ -107,7 +107,8 @@ let radians: Double = Double(angleInDegrees)  * pi / 180.0;
 // Write a definition for each variable followed by it's type (don't forget the colon!) below.
 
 
-
+var c: Character = "💩"
+var t: (Int, String, Double, Character) = (11, "Hello", 3.14, "👁️")
 
 
 
