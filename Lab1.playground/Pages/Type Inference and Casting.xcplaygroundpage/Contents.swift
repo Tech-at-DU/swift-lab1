@@ -2,13 +2,21 @@
 # Type Inference
 Swift has a language feature called _type inference_. That means that the compiler will try to automatically figure out the type of each variable on its own. However, it's often better to be explicit by declaring the type of a variable in the code. That way, both the compiler and other programmers reading the code can be sure of your intention. To excplicitly declare the type of a value (like a `String` or `Int`) in a variable, do the following:
  */
+
+
 var population: Int = 20
+
+
 /*:
  From now on, `population` will always be an integer (shortened as `Int`). An integer is a whole number - a number without decimal points. Let's see what happens when we try to set `population` to a decimal number.
  
  Uncomment the following line to see an error:
  */
+
+
 // population = 15.343234
+
+
 /*:
  The error says:
  `Cannot assign value of type 'Double' to type 'Int'.` A `Double` is a number that can have decimal points. We told Swift we were going to give it an `Int`, and instead we gave it a `Double`. Swift is a _statically typed_ language, which means once we declare a variable with a type, it can only hold values of that same type from now on. In this case, we told the compiler that `population` is an `Int`, so we can only store `Int` values in it.
@@ -25,6 +33,8 @@ var population: Int = 20
  - **`Character`** - A single unicode character.
  - **`String`** - A collection of `Character`s. Used to make words or sentences.
 */
+
+
 let slicesInAPie: Int = 8
 
 let piFloat: Float = 3.1415927
@@ -36,6 +46,7 @@ let piesAreAwesome: Bool = true
 let piSymbol: Character = "π"
 
 let piSentence: String = "π is cool. My favorite is lemon meringue."
+
 
 //:
 /*:

@@ -7,23 +7,35 @@ Programming is not powerful without functions. Functions are a block of code tha
  ## Declaration
  Here's how you declare a function with no parameters or return value.
  */
+
+
 func doNothing() {
     
 }
+
+
 /*:
  If you want to add a parameter, you guessed it - it goes within the parantheses.
  
  Notice the parameter name comes first, followed by colon and type, just like normal variable declarations.
  */
+
+
 func takesParam(name: String) {
     
 }
+
+
 /*:
  Here's how you return a value back to the caller:
  */
+
+
 func returnsSomething(name: String) -> String {
     return name + "!"
 }
+
+
 /*:
  - experiment:
  Try commenting out the code within the function. What happens?
@@ -33,9 +45,12 @@ func returnsSomething(name: String) -> String {
 /*:
  In order to take more than one parameter, you simply separate the inputs with a comma:
  */
+
+
 func difference(num1: Int, num2: Int) -> Int {
     return num1 - num2
 }
+
 
 /*:
  ## Parameter Names
@@ -43,13 +58,21 @@ func difference(num1: Int, num2: Int) -> Int {
  
  Let's first discuss the syntax. As you can see below, first you define the external name, followed by the internal name. The body of the function only sees the internal name and not the external name. Similarly, a caller will only see the external name and not the internal name.
  */
+
+
 func someFunc(externalName internalName: Int) -> Int {
     return internalName + 10
 }
+
+
 /*:
  When you define the external name for a parameter, you force the caller to use that name when they call the function:
  */
+
+
 let res = someFunc(externalName: 40)
+
+
 /*:
  - experiment:
  Try uncommenting the line below. What error do you get?
@@ -58,23 +81,39 @@ let res = someFunc(externalName: 40)
 /*:
  Now, let's talk about why you would use external names. Look at the function below:
  */
+
+
 func resize(width1: Int, height1: Int, width2: Int, height2: Int) {
     
 }
+
+
 /*:
  Notice how this function is being called. The caller sends in 4 numbers, but it is confusing which number matches which parameter. This is how bugs are made! Imagine accidentally switching two of these numbers, and everything falls apart.
  */
+
+
 resize(width1: 20, height1: 30, width2: 100, height2: 400)
+
+
 /*:
  This is where external names come in handy. You can force the caller to use the external names when calling the function to make it easier for them to see which value matches which parameter. Look at this modified version:
  */
+
+
 func resize2(fromWidth width1: Int, fromHeight height1: Int, toWidth width2: Int, toHeight height2: Int) {
     
 }
+
+
 /*:
  Look at how much more readable the line below is! If a programmer comes back later on to this code, she knows exactly what is happening. She does not have to go to look at the definition of the function to figure out what is happening on this line. Everything is explained right there in one line. It is obvious that the code is resizing (something) from width 20 to width 100 and from height 30 to height 400. This is all thanks to the power of internal/external parameter names!
  */
+
+
 resize2(fromWidth: 20, fromHeight: 30, toWidth: 100, toHeight: 400)
+
+
 /*:
  ### Challenge
  
